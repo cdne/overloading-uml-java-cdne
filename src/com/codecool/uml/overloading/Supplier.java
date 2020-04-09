@@ -14,6 +14,7 @@ public class Supplier {
     }
 
     Supplier(String name, String description) {
+        id = counter++;
         this.name = name;
         this.description = description;
     }
@@ -44,7 +45,7 @@ public class Supplier {
 
     @Override
     public String toString() {
-        return "";
+        return "Supplier: id: " + getId() + ", name: " + getName() + ", description: " + getDescription();
     }
 
 
