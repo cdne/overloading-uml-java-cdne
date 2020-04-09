@@ -16,7 +16,7 @@ public class Product {
     }
 
     Product(String name, float defaultPrice, Currency defaultCurrency){
-        id++;
+        id = counter++;
         setName(name);
         setDefaultPrice(defaultPrice);
         setDefaultCurrency(defaultCurrency);
