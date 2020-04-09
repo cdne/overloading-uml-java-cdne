@@ -50,13 +50,20 @@ public class ProductCategory {
         this.description = description;
     }
 
-    List<Product> getProducts(Warehouse warehouse){
 
-        return new ArrayList<>();
+    List<Product> getProducts(Warehouse warehouse){
+        List<Product> products = new ArrayList<>();
+        for(int i = 0; i < warehouse.productList.size();i++){
+            if(warehouse.productList.get(i).getProductCategory().getName().equals(getName())){
+                products.add(warehouse.productList.get(i));
+            }
+        }
+        return products;
     }
 
     @Override
     public String toString() {
-        return "";
+        return "ProductCategory:"+"id: " + getId() + ", name: " + getName() + ", department: " + getDepartment() +
+                ", description: " + getDescription();
     }
 }
