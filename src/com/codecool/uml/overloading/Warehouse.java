@@ -1,6 +1,5 @@
 package com.codecool.uml.overloading;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,11 +15,22 @@ public class Warehouse {
     }
 
     List<Product> getAllProductsBy(ProductCategory product){
-        return productList;
+        List<Product> productCategoryList = new ArrayList<>();
+        for (Product value : productList) {
+            if (value.getProductCategory().getName().equals(product.getName())) {
+                productCategoryList.add(value);
+            }
+        }
+        return productCategoryList;
     }
     List<Product> getAllProductsBy(Supplier supplier){
-        return new ArrayList<>();
-
+        List<Product> productsBySupplier = new ArrayList<>();
+        for (Product value : productList) {
+            if (value.getSupplier().getName().equals(supplier.getName())) {
+                productsBySupplier.add(value);
+            }
+        }
+        return productsBySupplier;
     }
 
 }
