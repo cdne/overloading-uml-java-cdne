@@ -40,7 +40,13 @@ public class Supplier {
     }
 
     List<Product> getProducts(Warehouse warehouse) {
-        return new ArrayList<>();
+        List<Product> products = new ArrayList<>();
+        for(int i = 0; i < warehouse.productList.size();i++){
+            if(warehouse.productList.get(i).getSupplier().getName().equals(getName())){
+                products.add(warehouse.productList.get(i));
+            }
+        }
+        return products;
     }
 
     @Override
